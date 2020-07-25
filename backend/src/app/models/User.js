@@ -1,10 +1,11 @@
-import Sequelize, { Model } from 'sequelize';
+import Sequelize, {
+  Model
+} from 'sequelize';
 import bcrypt from 'bcryptjs';
 
 class User extends Model {
   static init(sequelize) {
-    super.init(
-      {
+    super.init({
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         password: Sequelize.VIRTUAL,
@@ -29,6 +30,7 @@ class User extends Model {
   static associate(models) {
     this.belongsTo(models.File, {
       foreignKey: 'avatar_id',
+      as: 'avatar'
     });
   }
 
