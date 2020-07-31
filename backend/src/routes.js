@@ -1,4 +1,6 @@
-import { Router } from 'express';
+import {
+    Router
+} from 'express';
 import multer from 'multer';
 import multerConfig from './config/multer';
 
@@ -27,6 +29,7 @@ routes.get('/providers', ProviderController.index);
 
 routes.get('/appointments', AppointmentController.index);
 routes.post('/appointments', AppointmentController.store);
+routes.delete('/appointments/:id', AppointmentController.delete);
 
 routes.get('/schedule', ScheduleController.index);
 
