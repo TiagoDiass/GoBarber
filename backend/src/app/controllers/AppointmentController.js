@@ -17,7 +17,7 @@ class AppointmentController {
         canceled_at: null,
       },
 
-      attributes: ['id', 'date'],
+      attributes: ['id', 'date', 'past', 'cancellable'],
 
       limit: 20,
 
